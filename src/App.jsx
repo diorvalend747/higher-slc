@@ -3,7 +3,7 @@ import WebVersion from "./pages/Web-Version";
 import MobileVersion from "./pages/Mobile-Version";
 
 function App() {
-  const matches = useMediaQuery("(min-width:1200px)");
+  const matches = useMediaQuery("(min-width:1100px)");
 
   return <>{matches ? <WebVersion /> : <MobileVersion />}</>;
 }
