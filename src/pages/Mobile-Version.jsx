@@ -16,7 +16,10 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import SocialMediaIcons from "../components/SocialMedia";
 
 export default function MobileVersion() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState({
+    pass: false,
+    conf: false,
+  });
   const [tab, setTab] = useState(0);
 
   const handleTabChange = (event, newTab) => {
@@ -98,12 +101,16 @@ export default function MobileVersion() {
                 fontSize: "16px",
               },
             }}
-            type={!showPassword && "password"}
+            type={!showPassword.pass && "password"}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton onClick={() => setShowPassword(!showPassword)}>
-                    {showPassword ? (
+                  <IconButton
+                    onClick={() =>
+                      setShowPassword({ pass: !showPassword.pass })
+                    }
+                  >
+                    {showPassword.pass ? (
                       <VisibilityOff style={{ fontSize: "12px" }} />
                     ) : (
                       <Visibility style={{ fontSize: "12px" }} />
@@ -132,12 +139,16 @@ export default function MobileVersion() {
                   fontSize: "16px",
                 },
               }}
-              type={!showPassword && "password"}
+              type={!showPassword.conf && "password"}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword(!showPassword)}>
-                      {showPassword ? (
+                    <IconButton
+                      onClick={() =>
+                        setShowPassword({ conf: !showPassword.conf })
+                      }
+                    >
+                      {showPassword.conf ? (
                         <VisibilityOff style={{ fontSize: "12px" }} />
                       ) : (
                         <Visibility style={{ fontSize: "12px" }} />
