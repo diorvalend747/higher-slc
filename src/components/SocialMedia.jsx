@@ -1,12 +1,14 @@
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
+import Link from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "../assets/fb-icon.png";
+import FacebookIcon from "@mui/icons-material/Facebook";
+// import FacebookIcon from "../assets/fb-icon.png";
 
 export default function SocialMediaIcons() {
-  const Item = styled(Paper)(({}) => ({
+  const Item = styled(Link)(({}) => ({
     backgroundColor: "#090808",
     padding: "8px",
     textAlign: "center",
@@ -14,6 +16,7 @@ export default function SocialMediaIcons() {
     width: "2rem",
     borderRadius: "50%",
     marginTop: "2px",
+    cursor: "pointer",
   }));
 
   return (
@@ -25,14 +28,14 @@ export default function SocialMediaIcons() {
         spacing={2}
         mt={2}
       >
-        <Item>
+        <Item href="https://www.google.com" target="_blank" rel="noopener">
           <GoogleIcon />
         </Item>
-        <Item>
+        <Item href="https://www.apple.com" target="_blank" rel="noopener">
           <AppleIcon />
         </Item>
-        <Item>
-          <img src={FacebookIcon} width="25" height="25" alt="Facebook" />
+        <Item href="https://www.facebook.com" target="_blank" rel="noopener">
+          <FacebookIcon />
         </Item>
       </Stack>
     </>

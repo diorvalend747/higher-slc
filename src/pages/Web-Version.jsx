@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image1 from "../assets/image1.png";
+import Image2 from "../assets/image2.png";
+import Image3 from "../assets/image3.png";
+import Image4 from "../assets/image4.png";
+import Image5 from "../assets/image5.png";
 import HigherLogo from "../assets/higher-logo.png";
 import {
   TextField,
@@ -10,6 +14,7 @@ import {
   IconButton,
   Link,
   Stack,
+  CardMedia,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import GoogleIcon from "@mui/icons-material/Google";
@@ -17,16 +22,31 @@ import GoogleIcon from "@mui/icons-material/Google";
 export default function WebVersion() {
   const [showPassword, setShowPassword] = useState(false);
 
+  const images = [Image1, Image2, Image3, Image4, Image5];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((currentImageIndex) =>
+        currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
+      );
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <>
       <Grid container style={{ minHeight: "100vh" }}>
         <Grid item xs={7}>
-          <img
-            src={Image1}
-            style={{
+          <CardMedia
+            image={images[currentImageIndex]}
+            component="img"
+            sx={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "fill",
               objectPosition: "center center",
             }}
           />
@@ -39,7 +59,7 @@ export default function WebVersion() {
           justifyContent="center"
           alignItems="center"
         >
-          <Stack spacing={2}>
+          <Stack spacing={2} ml={4} width="40%">
             <div
               style={{
                 display: "flex",
