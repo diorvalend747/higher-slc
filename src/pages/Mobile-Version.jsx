@@ -67,6 +67,11 @@ export default function MobileVersion() {
             sx={{
               backgroundColor: "white",
               borderRadius: "8px",
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "transparent",
+                },
+              },
             }}
             inputProps={{
               sx: {
@@ -81,6 +86,11 @@ export default function MobileVersion() {
             sx={{
               backgroundColor: "white",
               borderRadius: "8px",
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                "& > fieldset": {
+                  borderColor: "transparent",
+                },
+              },
             }}
             inputProps={{
               sx: {
@@ -110,6 +120,11 @@ export default function MobileVersion() {
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
+                "& .MuiOutlinedInput-root.Mui-focused": {
+                  "& > fieldset": {
+                    borderColor: "transparent",
+                  },
+                },
               }}
               inputProps={{
                 sx: {

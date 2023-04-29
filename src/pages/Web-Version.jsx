@@ -15,8 +15,7 @@ import {
   Link,
   Stack,
   CardMedia,
-  ImageList,
-  ImageListItem,
+  InputBase,
 } from "@mui/material";
 import { Visibility, VisibilityOff, Close } from "@mui/icons-material";
 import GoogleIcon from "@mui/icons-material/Google";
@@ -25,7 +24,6 @@ export default function WebVersion() {
   const [showPassword, setShowPassword] = useState(false);
 
   const images = [Image1, Image2, Image3, Image4, Image5];
-  const index = [0, 1, 2, 3, 4, 5];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -128,6 +126,11 @@ export default function WebVersion() {
               sx={{
                 backgroundColor: "#090808",
                 borderRadius: "16px",
+                "& .MuiOutlinedInput-root.Mui-focused": {
+                  "& > fieldset": {
+                    borderColor: "transparent",
+                  },
+                },
               }}
               inputProps={{
                 sx: {
@@ -160,6 +163,11 @@ export default function WebVersion() {
               sx={{
                 backgroundColor: "#090808",
                 borderRadius: "16px",
+                "& .MuiOutlinedInput-root.Mui-focused": {
+                  "& > fieldset": {
+                    borderColor: "transparent",
+                  },
+                },
               }}
               inputProps={{
                 sx: {
